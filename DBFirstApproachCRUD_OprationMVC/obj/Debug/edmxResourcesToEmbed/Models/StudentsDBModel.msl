@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseFirstEFModelStoreContainer" CdmEntityContainer="DatabaseFirstEFEntities">
+    <EntitySetMapping Name="STUDENTSEFs">
+      <EntityTypeMapping TypeName="DatabaseFirstEFModel.STUDENTSEF">
+        <MappingFragment StoreEntitySet="STUDENTSEF">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="STANDARD" ColumnName="STANDARD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

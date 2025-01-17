@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DBFirstApproachCRUD_OprationMVC.Models.STUDENTSEF>
+
+@{
+    ViewBag.Title = "Student Management";
+}
+
+<h2 class="text-center my-4">Student Management</h2>
+
+<!-- Display messages -->
+@if (TempData["InsertMessage"] != null)
+{
+    <div class="alert alert-success">
+        @Html.Raw(TempData["InsertMessage"])
+    </div>
+}
+@if (TempData["UpdateMessage"] != null)
+{
+    <div class="alert alert-info">
+        @Html.Raw(TempData["UpdateMessage"])
+    </div>
+}
+@if (TempData["DeleteMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @Html.Raw(TempData["DeleteMessage"])
+    </div>
+}
+
+<!-- Button for adding new student -->
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<!-- Table for displaying students -->
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NAME)</th>
+            <th>@Html.DisplayNameFor(model => model.GENDER)</th>
+            <th>@Html.DisplayNameFor(model => model.AGE)</th>
+            <th>@Html.DisplayNameFor(model => model.STANDARD)</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.NAME)</td>
+                <td>@Html.DisplayFor(modelItem => item.GENDER)</td>
+                <td>@Html.DisplayFor(modelItem => item.AGE)</td>
+                <td>@Html.DisplayFor(modelItem => item.STANDARD)</td>
+                <td class="text-center">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
